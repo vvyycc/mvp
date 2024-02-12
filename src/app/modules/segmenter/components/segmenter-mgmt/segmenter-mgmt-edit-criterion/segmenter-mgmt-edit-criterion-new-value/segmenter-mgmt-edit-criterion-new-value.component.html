@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ 'segmenter.mgmt.management.edit.dialog-create.label' | translate }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutAlign="space between">
+      <mat-form-field appearance="outline"
+                      floatLabel="always"
+                      fxFlex="50">
+        <mat-label>{{ 'segmenter.mgmt.management.edit.dialog-create.fields.name' | translate | uppercase }}</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="outline"
+                      floatLabel="always"
+                      fxFlex="50">
+        <mat-label>{{ 'segmenter.mgmt.management.edit.dialog-create.fields.definition' | translate | uppercase }}</mat-label>
+        <input matInput formControlName="definicion">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!form.valid"
+          [mat-dialog-close]="true"
+          (click)="create()">{{ 'commons.accept' | translate }}</button>
+</mat-dialog-actions>

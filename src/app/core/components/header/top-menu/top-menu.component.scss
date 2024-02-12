@@ -1,0 +1,18 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background   : #EC0000 !important;
+    color        : white;
+    /*font-family: SantanderHeadlineW05-Rg;*/
+    position     : sticky;
+    top          : 0;
+    z-index      : 1000;
+}
+
+@media (max-width: 360px) {
+    .mat-toolbar span {
+        font-size: 14px;
+    }
+}

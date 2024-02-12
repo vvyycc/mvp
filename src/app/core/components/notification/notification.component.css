@@ -1,0 +1,23 @@
+.notification {
+  margin: 0;
+}
+
+.notification-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.notification .notification-wrapper {
+  padding: 0.25rem 0.25rem;
+}
+
+.notification .notification-icon {
+  margin-right: 0.5rem;
+}
+
+.notification .notification-summary {
+}
+
+.notification .notification-detail {
+  margin-left: 0.5rem;
+}

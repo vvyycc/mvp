@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>{{ 'aggregator.mgmt.management.dialog-create.label' | translate }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="radio-group" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-label>{{ 'aggregator.mgmt.management.dialog-create.fields.typology' | translate }}:</mat-label>
+      <mat-radio-group formControlName="tipologia">
+        <mat-radio-button value="COMERCIAL">COMERCIAL</mat-radio-button>
+        <mat-radio-button value="TESORERIA">TESORERÍA</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+        <mat-label>{{ 'aggregator.mgmt.management.dialog-create.fields.name' | translate }}</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+        <mat-label>{{ 'aggregator.mgmt.management.dialog-create.fields.definition' | translate }}</mat-label>
+        <input matInput formControlName="definicion">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!form.valid"
+          [mat-dialog-close]="true"
+          (click)="create()">{{ 'commons.accept' | translate }}</button>
+</mat-dialog-actions>

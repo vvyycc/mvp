@@ -1,0 +1,27 @@
+{
+  "title": "MVP Interés Básico",
+  "header": {
+    "title": "ASSETS LIABILITY MANAGEMENT"
+  },
+  "menu": {
+    "administracion": "ADMINISTRATION",
+    "ajustes": "ADJUSTMENT",
+    "segmentador": "SEGMENTER",
+    "agregador": "AGGREGATOR",
+    "etl": "ETL"
+  },
+  "footer": {
+    "group": "©Banco Santander S.A.",
+    "right": "Santander is a registered trademarks. All rights reserved."
+  },
+  "commons": {
+    "all": "ALL",
+    "cancel": "CANCEL",
+    "accept": "ACCEPT",
+    "create": "CREATE",
+    "confirmation-modal": {
+      "label": "Information",
+      "message": "Are you sure that you want to remove this record!"
+    }
+  }
+}

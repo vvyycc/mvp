@@ -1,0 +1,23 @@
+.dashboard-card {
+  top: 20px;
+  bottom: 15px;
+}
+
+.mat-card-header {
+  background-color: #EC0000;
+  color: white;
+  padding: 15px;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+}

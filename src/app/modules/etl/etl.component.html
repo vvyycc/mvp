@@ -1,0 +1,10 @@
+<div class="module-container">
+    <h1 class="mat-h1">{{ 'etl.title' | translate }}</h1>
+    <nav mat-tab-nav-bar dynamicHeight>
+        <a mat-tab-link *ngFor="let link of links" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">{{ link.label | translate }}</a>
+    </nav>
+    <div class="module-grid-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

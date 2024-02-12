@@ -1,0 +1,9 @@
+<mat-toolbar class="logo">
+  <img class="logo-company" [src]="logo"  alt=""/>
+</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/' + menu.link]" routerLinkActive="active" *ngFor="let menu of menus">
+    <mat-icon mat-list-icon>{{ menu.icon }}</mat-icon>
+    {{ 'menu.' + menu.title | translate }}
+  </a>
+</mat-nav-list>

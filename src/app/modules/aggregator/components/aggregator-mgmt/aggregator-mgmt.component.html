@@ -1,0 +1,60 @@
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+  <mat-form-field appearance="outline" floatLabel="always" fxFlex="33" fxFlex.lt-sm="100" fxFlexFill>
+    <mat-label>{{ 'aggregator.mgmt.search.title' | translate }}</mat-label>
+    <input matInput placeholder="{{ 'aggregator.mgmt.search.placeholder' | translate }}"
+           (keyup)="applyFilter($event)">
+  </mat-form-field>
+  <button mat-raised-button color="primary" fxFlex="max-content" fxFlex.lt-md="50" fxFlex.lt-sm="100" fxFlexFill
+          (click)="createCriterion()">
+    {{ 'commons.create' | translate }}
+  </button>
+</div>
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{ 'aggregator.mgmt.management.label' | translate }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="column">
+      <div class="loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+      </div>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="!isLoadingResults">
+        <caption></caption>
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i = index;">
+          <mat-header-cell *matHeaderCellDef>{{ viewColumns[i] | translate | uppercase }}</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <div [ngSwitch]="true">
+              <div *ngSwitchCase="column === 'actions'" class="red">
+                <button mat-icon-button
+                        matTooltip="{{ 'aggregator.mgmt.management.actions.delete' | translate | uppercase }}"
+                        matTooltipPosition="above"
+                        (click)="removeCriterion(element, i)">
+                  <mat-icon class="material-icons-outlined">delete_forever</mat-icon>
+                </button>
+                <button mat-icon-button
+                        matTooltip="{{ 'aggregator.mgmt.management.actions.upload' | translate | uppercase }}"
+                        matTooltipPosition="above"
+                        (click)="importCriterion(element)">
+                  <mat-icon class="material-icons-outlined">upload_file</mat-icon>
+                </button>
+              </div>
+              <div *ngSwitchCase="column === 'disponible'">
+                <mat-icon class="material-icons-outlined {{ element[column] === true ? 'green' : 'red' }}">
+                  {{ element[column] === true ? 'check_circle' : 'cancel' }}
+                </mat-icon>
+              </div>
+              <div *ngSwitchDefault>
+                {{ element[column] }}
+              </div>
+            </div>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [length]="resultsLength" [pageSize]="pageSize"></mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

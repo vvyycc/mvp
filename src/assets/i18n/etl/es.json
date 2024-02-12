@@ -1,0 +1,90 @@
+{
+  "etl": {
+    "title": "MÓDULO - ETL",
+    "home": {
+      "label": "INICIO",
+      "new-etl": "EJECUTAR",
+      "history": {
+        "label": "HISTORIAL DE EJECUCIONES",
+        "columns": {
+          "data-date": "Fecha Dato",
+          "start-date": "Inicio",
+          "end-date": "Fin",
+          "typology": "Tipo Contrato",
+          "entity": "Entidad",
+          "purpose": "Finalidad",
+          "period": "Periodicidad",
+          "status": "Estado",
+          "criterion": "Criterio",
+          "aggregate": "Agregado",
+          "filename": "Nombre fichero"
+        }
+      },
+      "dialog-exec": {
+        "label": "EJECUTAR NUEVA ETL",
+        "fields": {
+          "data-date": "FECHA DATO",
+          "aggregate": "AGREGADO",
+          "typology": "TIPO CONTRATO",
+          "entity": "ENTIDAD(ES)",
+          "period": "PERIODICIDAD",
+          "name": "NOMBRE ETL",
+          "purpose": "FINALIDAD"
+        }
+      }
+    },
+    "mappings": {
+      "label": "GESTIÓN DE MAPEO",
+      "header": "IMPORTAR FICHERO DE MAPEO",
+      "input-file": "SELECCIONE FICHERO"
+    },
+    "criteria": {
+      "label": "GESTIÓN DE CRITERIO",
+      "search": {
+        "title": "BUSCAR",
+        "placeholder": "INTRODUZCA TEXTO A BUCAR"
+      },
+      "columns": {
+        "name": "Nombre",
+        "typology": "Tipología",
+        "input-version": "Input",
+        "output-version": "Output",
+        "available": "Disponible",
+        "actions": "Acciones"
+      },
+      "actions": {
+        "delete": "Eliminar",
+        "upload": "Importar"
+      },
+      "dialog-create": {
+        "label": "CREAR CRITERIO",
+        "fields": {
+          "typology": "TIPOLOGÍA",
+          "name": "NOMBRE",
+          "definition": "DEFINICIÓN"
+        }
+      },
+      "dialog-upload": {
+        "label": "IMPORTAR FICHEROS DE CRITERIO",
+        "fields": {
+          "input-file": "SELECCIONE FICHERO INPUT",
+          "output-file": "SELECCIONE FICHERO OUTPUT"
+        }
+      }
+    }
+  },
+  "commons": {
+    "all": "TODAS",
+    "cancel": "CANCELAR",
+    "accept": "ACEPTAR",
+    "create": "CREAR",
+    "back": "VOLVER",
+    "confirmation-modal": {
+      "label": "Información",
+      "message": "Está seguro que desea eliminar el registro!"
+    },
+    "validations": {
+      "invalid-excel-extension": "EXTENSIÓN DE EXCEL NO VÁLIDA"
+    }
+  }
+}

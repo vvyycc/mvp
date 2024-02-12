@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="changeToggle()">
+        <mat-icon aria-label="side nav toggle icon">menu</mat-icon>
+    </button>
+    <span translate>header.title</span>
+    <div class="spacer"></div>
+    <app-lang-menu [languages]="languages"
+        (langChange)="languageChangeHandler($event)">
+    </app-lang-menu>
+</mat-toolbar>

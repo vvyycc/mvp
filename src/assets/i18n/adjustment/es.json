@@ -1,0 +1,40 @@
+{
+  "adjustment": {
+    "title": "MÓDULO - AJUSTES",
+    "home": {
+      "label": "INICIO",
+      "new": "EJECUTAR",
+      "history": {
+        "label": "HISTORIAL DE EJECUCIONES",
+        "columns": {
+          "data-date": "Fecha Dato",
+          "typology": "Tipo Contrato",
+          "purpose": "Finalidad",
+          "start-date": "Inicio",
+          "end-date": "Fin",
+          "not-executed": "No ejecutados",
+          "ok": "Ok",
+          "ko": "Ko",
+          "status": "Estado",
+          "errors": "Log errores"
+        }
+      }
+    },
+    "file-mgmt": {
+      "label": "GESTIÓN DE FICHEROS"
+    },
+    "adj-mgmt": {
+      "label": "GESTIÓN DE AJUSTES"
+    },
+    "commons": {
+      "all": "TODAS",
+      "cancel": "CANCELAR",
+      "accept": "ACEPTAR",
+      "actions": "ACCIONES",
+      "download": "DESCARGAR"
+    },
+    "validations": {
+      "invalid-excel-extension": "EXTENSIÓN DE EXCEL NO VÁLIDA"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.notification {
+  margin: 0;
+}
+
+.notification-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.notification .notification-wrapper {
+  padding: 0.25rem 0.25rem;
+  padding: 16px;
+}
+
+.notification .notification-icon {
+  margin-right: 0.5rem;
+}
+
+.notification .notification-detail {
+  margin-left: 0.5rem;
+}
+
+.actions-divider {
+  margin-top: 20px;
+}
+
+.info {
+  background: #B3E5FC;
+  border: solid #01579B;
+  border-width: 0 0 0 6px;
+  color: #01579B;
+  border-radius: 5px;
+}

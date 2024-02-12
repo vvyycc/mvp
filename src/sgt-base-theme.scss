@@ -1,0 +1,46 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+@import './assets/styles/santander-app.css';
+
+@include mat.core();
+
+$mat-santander: (
+  50: #ffe7e6,
+  100: #ffc8b8,
+  200: #ffa28b,
+  300: #ff7b5c,
+  400: #ff5838,
+  500: #ff2b12,
+  600: #ff220d,
+  700: #fa1606,
+  800: #ec0000,
+  900: #d50000,
+  A100: #f8b5cf,
+  A200: #f383af,
+  A400: #ef4b8f,
+  A700: #ec0076,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$sgt-base-theme-primary: mat.define-palette($mat-santander, 800);
+$sgt-base-theme-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$sgt-base-theme-warn: mat.define-palette(mat.$red-palette);
+
+$sgt-base-theme: mat.define-light-theme($sgt-base-theme-primary, $sgt-base-theme-accent, $sgt-base-theme-warn);
+
+@include mat.all-component-themes($sgt-base-theme);

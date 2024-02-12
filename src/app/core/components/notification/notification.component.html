@@ -1,0 +1,11 @@
+<div class="notification">
+  <div class="notification-wrapper">
+    <mat-icon class="notification-icon">{{ data.icon }}</mat-icon>
+    <div class="notification-summary">
+      <strong>{{ data.type | titlecase }}</strong>
+    </div>
+    <div class="notification-detail">
+      {{ data.message }}
+    </div>
+  </div>
+</div>

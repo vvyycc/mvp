@@ -1,0 +1,114 @@
+{
+  "segmenter": {
+    "title": "SEGMENTER - MODULE",
+    "home": {
+      "label": "HOME",
+      "search": {
+        "title": "SEARCH",
+        "placeholder": "ENTER TEXT TO SEARCH"
+      },
+      "new": "EXECUTE",
+      "history": {
+        "label": "EXECUTIONS HISTORY",
+        "columns": {
+          "data-date": "Data Date",
+          "start-date": "Start",
+          "end-date": "End",
+          "typology": "Contract Type",
+          "entity": "Entity",
+          "purpose": "Purpose",
+          "period": "Periodicity",
+          "status": "Status",
+          "criterion": "Criterion",
+          "execution-date": "Execution Date",
+          "detail": "Detail"
+        },
+        "detail": {
+          "columns": {
+            "data-date": "Data Date",
+            "entity": "Entity",
+            "criterion": "Criterion",
+            "version": "Version",
+            "segmented": "Segmented",
+            "no-segmented": "No Segmented",
+            "errors": "Errors"
+          }
+        }
+      },
+      "dialog-exec": {
+        "label": "EXECUTE NEW SEGMENTER",
+        "fields": {
+          "data-date": "DATA DATE",
+          "typology": "CONTRACT TYPE",
+          "entity": "ENTIT(Y/IES)",
+          "period": "PERIODICITY"
+        }
+      }
+    },
+    "mgmt": {
+      "label": "MANAGEMENT",
+      "search": {
+        "title": "SEARCH",
+        "placeholder": "ENTER TEXT TO SEARCH"
+      },
+      "management": {
+        "label": "CRITERIA MANAGEMENT",
+        "columns": {
+          "typology": "Typology",
+          "name": "Name",
+          "definition": "Description",
+          "automatic": "Automatic",
+          "available": "Available",
+          "actions": "Actions"
+        },
+        "actions": {
+          "edit": "Edit",
+          "delete": "Delete",
+          "upload": "Import"
+        },
+        "dialog-create": {
+          "label": "CREATE CRITERION",
+          "fields": {
+            "typology": "TYPOLOGY",
+            "name": "NOMBRE",
+            "definition": "DEFINITION"
+          }
+        },
+        "dialog-upload": {
+          "label": "IMPORT CRITERION",
+          "fields": {
+            "automatic": "Automatic",
+            "input-file": "SELECT FILE"
+          }
+        },
+        "edit": {
+          "label": "EDIT Criterio -",
+          "dialog-create": {
+            "label": "CREATE VALUE",
+            "fields": {
+              "name": "Name",
+              "definition": "Definition"
+            }
+          },
+          "dialog-edit": {
+            "label": "MODIFY VALUE"
+          }
+        }
+      }
+    }
+  },
+  "commons": {
+    "all": "ALL",
+    "cancel": "CANCEL",
+    "accept": "ACCEPT",
+    "create": "CREATE",
+    "back": "BACK",
+    "confirmation-modal": {
+      "label": "Information",
+      "message": "Are you sure that you want to remove this record!"
+    },
+    "validations": {
+      "invalid-excel-extension": "INVALID EXCEL EXTENSION"
+    }
+  }
+}

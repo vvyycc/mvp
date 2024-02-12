@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{ 'commons.confirmation-modal.label' | translate | uppercase }}</h2>
+<mat-dialog-content>
+  <div class="notification info" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+    <div class="notification-wrapper">
+      <mat-icon class="notification-icon">info</mat-icon>
+      <div class="notification-detail">
+        {{ 'commons.confirmation-modal.message' | translate | uppercase }}
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="">{{ 'commons.cancel' | translate | uppercase }}</button>
+  <button mat-raised-button color="primary"
+          type="submit"
+          [mat-dialog-close]="true"
+          (click)="accept()">{{ 'commons.accept' | translate | uppercase }}</button>
+</mat-dialog-actions>

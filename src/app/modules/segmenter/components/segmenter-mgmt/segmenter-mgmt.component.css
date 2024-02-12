@@ -1,0 +1,50 @@
+.dashboard-card {
+  top: 20px;
+  bottom: 15px;
+}
+
+.mat-card-header {
+  background-color: #EC0000;
+  color: white;
+  padding: 15px;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.loading-shade {
+  position: inherit;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green {
+  color: #82ad00;
+}
+
+.red {
+  color: #ec0000;
+}
+
+.mat-column-actions {
+  width: 32px;
+  text-align: end;
+  display: grid;
+}

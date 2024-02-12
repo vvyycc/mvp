@@ -1,0 +1,31 @@
+.mat-drawer-container {
+  height: 100%;
+}
+
+.mat-drawer-content {
+  overflow-y: overlay;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.logo {
+  background    : #EC0000 !important;
+  padding-bottom: 0.2em;
+}
+
+.sidenav .mat-toolbar {
+  background: #EC0000 !important;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top     : 0;
+  z-index : 1;
+}
+
+.logo-company {
+  width : 182px;
+  height: 32px;
+}

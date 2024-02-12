@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.module-container {
+  margin: 20px;
+}
+
+.module-grid-container {
+  margin-top: 20px;
+  padding-bottom: 70px;
+}
+
+.mat-snack-bar-container {
+  margin-bottom: 66px !important;
+}
+
+.error.mat-snack-bar-container {
+  background: #FFCDD2;
+  border: solid #B71C1C;
+  border-width: 0 0 0 6px;
+  color: #B71C1C;
+}
+
+.info.mat-snack-bar-container {
+  background: #B3E5FC;
+  border: solid #01579B;
+  border-width: 0 0 0 6px;
+  color: #01579B;
+}
+
+.success.mat-snack-bar-container {
+  background: #C8E6C9;
+  border: solid #1B5E20;
+  border-width: 0 0 0 6px;
+  color: #1B5E20;
+}

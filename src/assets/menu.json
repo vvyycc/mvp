@@ -1,0 +1,32 @@
+[
+    {
+        "index": "1",
+        "title": "administracion",
+        "link": "management",
+        "icon": "settings"
+    },
+    {
+        "index": "2",
+        "title": "ajustes",
+        "link": "adjustment",
+        "icon": "equalizer"
+    },
+    {
+        "index": "3",
+        "title": "segmentador",
+        "link": "segmenter",
+        "icon": "splitscreen"
+    },
+    {
+        "index": "4",
+        "title": "agregador",
+        "link": "aggregator",
+        "icon": "library_add"
+    },
+    {
+        "index": "5",
+        "title": "etl",
+        "link": "etl",
+        "icon": "published_with_changes"
+    }
+]

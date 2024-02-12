@@ -1,0 +1,66 @@
+{
+  "etl": {
+    "title": "ETL MODULE",
+    "home": {
+      "label": "HOME",
+      "new-etl": "EXECUTE",
+      "history": {
+        "label": "EXECUTIONS HISTORY",
+        "columns": {
+          "data-date": "Data Date",
+          "start-date": "Start",
+          "end-date": "End",
+          "typology": "Contract Type",
+          "entity": "Entity",
+          "purpose": "Purpose",
+          "period": "Periodicity",
+          "status": "Status",
+          "criterion": "Criterion",
+          "aggregate": "Aggregate",
+          "filename": "File Name"
+        }
+      },
+      "dialog-exec": {
+        "label": "EXECUTE NEW ETL",
+        "fields": {
+          "data-date": "DATA DATE",
+          "aggregate": "AGGREGATE",
+          "typology": "CONTRACT TYPE",
+          "entity": "ENTIT(Y/IES)",
+          "period": "PERIODICITY",
+          "name": "ETL NAME",
+          "purpose": "PURPOSE"
+        }
+      }
+    },
+    "mappings": {
+      "label": "MAPPING MANAGEMENT",
+      "header": "IMPORT MAPPING FILE",
+      "input-file": "SELECT TYPE"
+    },
+    "criteria": {
+      "label": "CRITERIA MANAGEMENT",
+      "search": {
+        "title": "SEARCH",
+        "placeholder": "ENTER TEXT TO SEARCH"
+      },
+      "header": "IMPORT CRITERIA FILE",
+      "select-type": "FILE TYPE",
+      "input-file": "SELECT TYPE"
+    }
+  },
+  "commons": {
+    "all": "ALL",
+    "cancel": "CANCEL",
+    "accept": "ACCEPT",
+    "create": "CREATE",
+    "back": "BACK",
+    "confirmation-modal": {
+      "label": "Information",
+      "message": "Are you sure that you want to remove this record!"
+    },
+    "validations": {
+      "invalid-excel-extension": "INVALID EXCEL EXTENSION"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<ng-container *ngIf="progress$ | async as progress">
+  <mat-card>
+    <span>{{ getFile.name }}({{ getFile.size | bytes }})</span>
+    <div>
+      <mat-progress-bar [value]="progress.percentage"></mat-progress-bar>
+      <button matSuffix mat-icon-button
+              [disabled]="inProgress$ | async"
+              (click)="upload()">
+        <mat-icon>upload</mat-icon>
+      </button>
+      <button mat-icon-button
+              (click)="remove()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+    <span>{{ progress.percentage }}%</span>
+    <span>{{ progress.loaded | bytes }} of {{ progress.total }}</span>
+  </mat-card>
+</ng-container>

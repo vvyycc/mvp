@@ -1,0 +1,93 @@
+<h2 mat-dialog-title>{{ 'etl.home.dialog-exec.label' | translate }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="execEtlForm">
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.data-date' | translate }}</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.aggregate' | translate }}</mat-label>
+        <mat-select formControlName="aggregate" (selectionChange)="showTypologyView()">
+          <mat-option *ngFor="let aggregate of aggregates" [value]="aggregate">{{ aggregate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.typology' | translate }}</mat-label>
+        <mat-select formControlName="typology" (selectionChange)="showTypologyView()">
+          <mat-option *ngFor="let typology of typologies" [value]="typology">{{ typology }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.entity' | translate }}</mat-label>
+        <mat-select #selectedBank multiple formControlName="entity">
+          <div class="mat-option">
+            <mat-checkbox #checkBank color="primary"
+                          [(ngModel)]="allBankSelected" [ngModelOptions]="{standalone: true}"
+                          (change)="toggleAll(selectedBank, checkBank)">
+              {{ 'etl.commons.all' | translate }}</mat-checkbox>
+          </div>
+          <mat-option *ngFor="let entity of entities" [value]="entity"
+                      (click)="toggleOneBank(selectedBank)">{{ entity.descripcion }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.period' | translate }}</mat-label>
+        <mat-select #selectPeriod multiple formControlName="period">
+          <div class="mat-option">
+            <mat-checkbox #checkPeriod color="primary"
+                          [(ngModel)]="allPeriodSelected" [ngModelOptions]="{standalone: true}"
+                          (change)="toggleAll(selectPeriod, checkPeriod)">
+              {{ 'etl.commons.all' | translate }}</mat-checkbox>
+          </div>
+          <mat-option *ngFor="let period of periods" [value]="period"
+                      (click)="toggleOnePeriod(selectPeriod)">{{ period }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.name' | translate }}</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="">
+        <mat-label>{{ 'etl.home.dialog-exec.fields.purpose' | translate }}</mat-label>
+        <mat-select formControlName="purpose">
+          <mat-option *ngFor="let purpose of purposes" [value]="purpose">{{ purpose }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-accordion *ngIf="typologyView | async">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ execEtlForm.get('typology').value }}</mat-panel-title>
+            <mat-panel-description>
+              {{ aggregateList.selectedOptions.selected[0]?.value }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-container>
+            <mat-selection-list #aggregateList [multiple]="false" formControlName="criteria">
+              <div *ngFor="let aggregate of aggregatesByCriteria; last as last">
+                <mat-list-option [value]="aggregate.nombre">{{ aggregate.nombre }}</mat-list-option>
+                <mat-divider *ngIf="!last"></mat-divider>
+              </div>
+            </mat-selection-list>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'etl.commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!execEtlForm.valid"
+          [mat-dialog-close]="true"
+          (click)="execute()">{{ 'etl.commons.accept' | translate }}</button>
+</mat-dialog-actions>

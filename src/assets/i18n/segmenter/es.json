@@ -1,0 +1,116 @@
+{
+  "segmenter": {
+    "title": "MÓDULO - SEGMENTADOR",
+    "home": {
+      "label": "INICIO",
+      "search": {
+        "title": "BUSCAR",
+        "placeholder": "INTRODUZCA TEXTO A BUCAR"
+      },
+      "new": "EJECUTAR",
+      "history": {
+        "label": "HISTORIAL DE EJECUCIONES",
+        "columns": {
+          "data-date": "Fecha Dato",
+          "start-date": "Inicio",
+          "end-date": "Fin",
+          "typology": "Tipo Contrato",
+          "entity": "Entidad",
+          "purpose": "Finalidad",
+          "period": "Periodicidad",
+          "status": "Estado",
+          "criterion": "Criterio",
+          "execution-date": "Fecha Ejecución",
+          "detail": "Detalle"
+        },
+        "detail": {
+          "back": "VOLVER",
+          "download": "DESCARGAR",
+          "columns": {
+            "data-date": "Fecha Dato",
+            "entity": "Entidad",
+            "criterion": "Criterio",
+            "version": "Versión",
+            "segmented": "Segmentado",
+            "no-segmented": "No Segmentado",
+            "errors": "Errores"
+          }
+        }
+      },
+      "dialog-exec": {
+        "label": "EJECUTAR NUEVA SEGMENTACIÓN",
+        "fields": {
+          "data-date": "FECHA DATO",
+          "typology": "TIPO CONTRATO",
+          "entity": "ENTIDAD(ES)",
+          "period": "PERIODICIDAD"
+        }
+      }
+    },
+    "mgmt": {
+      "label": "GESTIÓN",
+      "search": {
+        "title": "BUSCAR",
+        "placeholder": "INTRODUZCA TEXTO A BUCAR"
+      },
+      "management": {
+        "label": "GESTIÓN DE CRITERIOS",
+        "columns": {
+          "typology": "Tipología",
+          "name": "Nombre",
+          "definition": "Descripción",
+          "automatic": "Automático",
+          "available": "Disponible",
+          "actions": "Acciones"
+        },
+        "actions": {
+          "edit": "Editar",
+          "delete": "Eliminar",
+          "upload": "Importar"
+        },
+        "dialog-create": {
+          "label": "CREAR CRITERIO",
+          "fields": {
+            "typology": "TIPOLOGÍA",
+            "name": "NOMBRE",
+            "definition": "DEFINICIÓN"
+          }
+        },
+        "dialog-upload": {
+          "label": "IMPORTAR CRITERIO",
+          "fields": {
+            "automatic": "Automático",
+            "input-file": "SELECCIONE FICHERO"
+          }
+        },
+        "edit": {
+          "label": "EDITAR Criterio -",
+          "dialog-create": {
+            "label": "CREAR VALOR",
+            "fields": {
+              "name": "Nombre",
+              "definition": "Definición"
+            }
+          },
+          "dialog-edit": {
+            "label": "MODIFICAR VALOR"
+          }
+        }
+      }
+    }
+  },
+  "commons": {
+    "all": "TODAS",
+    "cancel": "CANCELAR",
+    "accept": "ACEPTAR",
+    "create": "CREAR",
+    "back": "VOLVER",
+    "confirmation-modal": {
+      "label": "Información",
+      "message": "Está seguro que desea eliminar el registro!"
+    },
+    "validations": {
+      "invalid-excel-extension": "EXTENSIÓN DE EXCEL NO VÁLIDA"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.grid-container {
+    margin        : 20px;
+    padding-bottom: 70px;
+}
+
+.dashboard-card {
+  top: 20px;
+  bottom: 15px;
+}
+
+.mat-card-header {
+  background-color: #EC0000;
+  color: white;
+  padding: 15px;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-card-content {
+  padding: 16px;
+}
+
+.mat-card-actions {
+  padding: 16px !important;
+}
+
+.mat-form-field input {
+  cursor: pointer !important;
+}

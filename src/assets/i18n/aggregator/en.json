@@ -1,0 +1,86 @@
+{
+  "aggregator": {
+    "title": "AGGREGATOR - MODULE",
+    "home": {
+      "label": "HOME",
+      "search": {
+        "title": "SEARCH",
+        "placeholder": "ENTER TEXT TO SEARCH"
+      },
+      "new-aggregator": "EXECUTE",
+      "history": {
+        "label": "EXECUTIONS HISTORY",
+        "columns": {
+          "data-date": "Data Date",
+          "start-date": "Start",
+          "end-date": "End",
+          "typology": "Contract Type",
+          "entity": "Entity",
+          "purpose": "Purpose",
+          "period": "Periodicity",
+          "status": "Status",
+          "criterion": "Criterion",
+          "execution-date": "Execution Date"
+        }
+      },
+      "dialog-exec": {
+        "label": "EXECUTE NEW AGGREGATION",
+        "fields": {
+          "data-date": "DATA DATE",
+          "typology": "CONTRACT TYPE",
+          "entity": "ENTIT(Y/IES)",
+          "period": "PERIODICITY",
+          "purpose": "PURPOSE"
+        }
+      }
+    },
+    "mgmt": {
+      "label": "MANAGEMENT",
+      "search": {
+        "title": "SEARCH",
+        "placeholder": "ENTER TEXT TO SEARCH"
+      },
+      "management": {
+        "label": "CRITERIA MANAGEMENT",
+        "columns": {
+          "name": "Name",
+          "typology": "Typology",
+          "available": "Available",
+          "actions": "Actions"
+        },
+        "actions": {
+          "delete": "Delete",
+          "upload": "Import"
+        },
+        "dialog-create": {
+          "label": "CREATE CRITERION",
+          "fields": {
+            "typology": "TYPOLOGY",
+            "name": "NAME",
+            "definition": "DEFINITION"
+          }
+        },
+        "dialog-upload": {
+          "label": "IMPORT CRITERION",
+          "fields": {
+            "input-file": "SELECT FILE"
+          }
+        }
+      }
+    }
+  },
+  "commons": {
+    "all": "ALL",
+    "cancel": "CANCEL",
+    "accept": "ACCEPT",
+    "create": "CREATE",
+    "back": "BACK",
+    "confirmation-modal": {
+      "label": "Information",
+      "message": "Are you sure that you want to remove this record!"
+    },
+    "validations": {
+      "invalid-excel-extension": "INVALID EXCEL EXTENSION"
+    }
+  }
+}

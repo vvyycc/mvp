@@ -1,0 +1,27 @@
+{
+  "title": "MVP Interés Básico",
+  "header": {
+    "title": "GESTIÓN DE ACTIVOS Y PASIVOS"
+  },
+  "menu": {
+    "administracion": "ADMINISTRACIÓN",
+    "ajustes": "AJUSTES",
+    "segmentador": "SEGMENTADOR",
+    "agregador": "AGREGADOR",
+    "etl": "ETL"
+  },
+  "footer": {
+    "group": "©Banco Santander, S.A.",
+    "right": "Santander es una marca registrada. Todos los derechos reservados."
+  },
+  "commons": {
+    "all": "TODAS",
+    "cancel": "CANCELAR",
+    "accept": "ACEPTAR",
+    "create": "CREAR",
+    "confirmation-modal": {
+      "label": "Información",
+      "message": "Está seguro que desea eliminar el registro!"
+    }
+  }
+}

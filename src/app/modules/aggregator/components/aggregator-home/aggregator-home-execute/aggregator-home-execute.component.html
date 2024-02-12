@@ -1,0 +1,110 @@
+<h2 mat-dialog-title>{{ 'aggregator.home.dialog-exec.label' | translate }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="execAggForm">
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'aggregator.home.dialog-exec.fields.data-date' | translate }}</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="fechaDato">
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'aggregator.home.dialog-exec.fields.typology' | translate }}</mat-label>
+        <mat-select #selectTypology multiple formControlName="tipologias"
+                    (selectionChange)="showTypologyViews()">
+          <div class="mat-option">
+            <mat-checkbox #checkTypology color="primary"
+                          [(ngModel)]="allTypologySelected" [ngModelOptions]="{standalone: true}"
+                          (change)="toggleAllTypology(selectTypology, checkTypology)">
+              {{ 'commons.all' | translate }}</mat-checkbox>
+          </div>
+          <mat-option *ngFor="let typology of typologies" [value]="typology"
+                      (click)="toggleOneTypology(selectTypology)">{{ typology }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="">
+        <mat-label>{{ 'aggregator.home.dialog-exec.fields.entity' | translate }}</mat-label>
+        <mat-select #selectedBank multiple formControlName="entidades">
+          <div class="mat-option">
+            <mat-checkbox #checkBank color="primary"
+                          [(ngModel)]="allBankSelected" [ngModelOptions]="{standalone: true}"
+                          (change)="toggleAll(selectedBank, checkBank)">
+              {{ 'commons.all' | translate }}</mat-checkbox>
+          </div>
+          <mat-option *ngFor="let entity of entities" [value]="entity"
+                      (click)="toggleOneBank(selectedBank)">{{ entity.descripcion }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="33.33">
+        <mat-label>{{ 'aggregator.home.dialog-exec.fields.period' | translate }}</mat-label>
+        <mat-select #selectPeriod multiple formControlName="periodicidades">
+          <div class="mat-option">
+            <mat-checkbox #checkPeriod color="primary"
+                          [(ngModel)]="allPeriodSelected" [ngModelOptions]="{standalone: true}"
+                          (change)="toggleAll(selectPeriod, checkPeriod)">
+              {{ 'commons.all' | translate }}</mat-checkbox>
+          </div>
+          <mat-option *ngFor="let period of periods" [value]="period"
+                      (click)="toggleOnePeriod(selectPeriod)">{{ period }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="">
+        <mat-label>{{ 'aggregator.home.dialog-exec.fields.purpose' | translate }}</mat-label>
+        <mat-select formControlName="finalidad">
+          <mat-option *ngFor="let purpose of purposes" [value]="purpose">{{ purpose }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <mat-accordion *ngIf="typologyView">
+        <mat-expansion-panel *ngFor="let typo of this.execAggForm.get('tipologias').value">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ typo }}</mat-panel-title>
+            <mat-panel-description *ngIf="typo === 'COMERCIAL'">
+              {{ comercialText }}
+              <span *ngIf="comercialCount > 1">
+                (+{{ comercialCount - 1 }}
+                {{ comercialCount === 2 ? 'other' : 'others' }})
+              </span>
+            </mat-panel-description>
+            <mat-panel-description *ngIf="typo === 'TESORERIA'">
+              {{ tesoreriaText }}
+              <span *ngIf="tesoreriaCount > 1">
+                (+{{ tesoreriaCount - 1 }}
+                {{ tesoreriaCount === 2 ? 'other' : 'others' }})
+              </span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div [ngSwitch]="true">
+            <ng-container *ngSwitchCase="typo === 'COMERCIAL'">
+              <mat-selection-list #com formControlName="comercial" (selectionChange)="updateDescription(typo, com)">
+                <div *ngFor="let com of comAggregates; last as last">
+                  <mat-list-option [value]="com">{{ com.nombre }}</mat-list-option>
+                  <mat-divider *ngIf="!last"></mat-divider>
+                </div>
+              </mat-selection-list>
+            </ng-container>
+            <ng-container *ngSwitchCase="typo === 'TESORERIA'">
+              <mat-selection-list #tes formControlName="tesoreria" (selectionChange)="updateDescription(typo, tes)">
+                <div *ngFor="let tes of tesAggregates; last as last">
+                  <mat-list-option [value]="tes">{{ tes.nombre }}</mat-list-option>
+                  <mat-divider *ngIf="!last"></mat-divider>
+                </div>
+              </mat-selection-list>
+            </ng-container>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!execAggForm.valid"
+          [mat-dialog-close]="true"
+          (click)="execute()">{{ 'commons.accept' | translate }}</button>
+</mat-dialog-actions>

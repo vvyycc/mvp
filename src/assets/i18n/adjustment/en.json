@@ -1,0 +1,40 @@
+{
+  "adjustment": {
+    "title": "ADJUSTMENT - MODULE",
+    "home": {
+      "label": "HOME",
+      "new": "EXECUTE",
+      "history": {
+        "label": "EXECUTIONS HISTORY",
+        "columns": {
+          "data-date": "Data Date",
+          "typology": "Contract Type",
+          "purpose": "Purpose",
+          "start-date": "Start",
+          "end-date": "End",
+          "not-executed": "Not executed",
+          "ok": "Ok",
+          "ko": "Ko",
+          "status": "Status",
+          "errors": "Errors log"
+        }
+      }
+    },
+    "file-mgmt": {
+      "label": "FILE MANAGEMENT"
+    },
+    "adj-mgmt": {
+      "label": "ADJUSTMENT MANAGEMENT"
+    },
+    "commons": {
+      "all": "ALL",
+      "cancel": "CANCEL",
+      "accept": "ACCEPT",
+      "actions": "ACTIONS",
+      "download": "DOWNLOAD"
+    },
+    "validations": {
+      "invalid-excel-extension": "INVALID EXCEL EXTENSION"
+    }
+  }
+}

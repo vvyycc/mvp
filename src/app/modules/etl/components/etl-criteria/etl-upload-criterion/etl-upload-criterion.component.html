@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>{{ 'etl.criteria.dialog-upload.label' | translate }}</h2>
+<mat-card-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline"
+                    floatLabel="always">
+      <mat-label>{{ 'etl.criteria.dialog-upload.fields.input-file' | translate }}</mat-label>
+      <input matInput [readonly]="true" placeholder="INPUT">
+      <button matSuffix mat-icon-button>
+        <mat-icon>upload</mat-icon>
+      </button>
+      <mat-error
+        *ngIf="f.filenameI.invalid">{{ 'commons.validations.invalid-excel-extension' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <input hidden type="file" accept=".xls, .xlsx">
+    <mat-card>
+    <div>
+      <mat-progress-bar [value]="20"></mat-progress-bar>
+      <button matSuffix mat-icon-button>
+        <mat-icon>upload</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+    </mat-card>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center">
+      <mat-form-field (click)="fileInput.click()"
+                      appearance="outline"
+                      floatLabel="always">
+        <mat-label>{{ 'etl.criteria.dialog-upload.fields.input-file' | translate }}</mat-label>
+        <input matInput formControlName="filenameI" [readonly]="true" placeholder="INPUT">
+        <button matSuffix mat-icon-button>
+          <mat-icon>upload</mat-icon>
+        </button>
+        <mat-error
+          *ngIf="f.filenameI.invalid">{{ 'commons.validations.invalid-excel-extension' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <input hidden type="file" formControlName="fileInput" #fileInput (change)="onFileInput(fileInput.files)"
+             accept=".xls, .xlsx">
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center">
+      <mat-form-field (click)="fileOutput.click()"
+                      appearance="outline"
+                      floatLabel="always">
+        <mat-label>{{ 'etl.criteria.dialog-upload.fields.output-file' | translate }}</mat-label>
+        <input matInput formControlName="filenameO" [readonly]="true" placeholder="OUTPUT">
+        <button matSuffix mat-icon-button>
+          <mat-icon>upload</mat-icon>
+        </button>
+        <mat-error
+          *ngIf="f.filenameO.invalid">{{ 'commons.validations.invalid-excel-extension' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <input hidden type="file" formControlName="fileOutput" #fileOutput (change)="onFileOutput(fileOutput.files)"
+             accept=".xls, .xlsx">
+    </div>
+  </form>
+</mat-card-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!form.valid"
+          [mat-dialog-close]="true"
+          (click)="uploadFile()">{{ 'commons.accept' | translate }}</button>
+</mat-dialog-actions>

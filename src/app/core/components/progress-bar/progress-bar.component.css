@@ -1,0 +1,5 @@
+.mat-progress-bar {
+  z-index: 1000;
+  display: flex;
+  position: fixed;
+}

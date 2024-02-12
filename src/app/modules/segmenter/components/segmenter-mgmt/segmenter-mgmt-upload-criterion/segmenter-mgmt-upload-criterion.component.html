@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>{{ 'segmenter.mgmt.management.dialog-upload.label' | translate }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="uploadForm">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutAlign="space between">
+      <mat-form-field (click)="fileInput.click()"
+                      appearance="outline"
+                      floatLabel="always">
+        <mat-label>{{ 'segmenter.mgmt.management.dialog-upload.fields.input-file' | translate }}</mat-label>
+        <input matInput formControlName="filename" [readonly]="true">
+        <button matSuffix mat-icon-button>
+          <mat-icon>upload</mat-icon>
+        </button>
+        <mat-error
+          *ngIf="f.filename.invalid">{{ 'commons.validations.invalid-excel-extension' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-slide-toggle formControlName="automatic"
+                        color="primary"
+                        [(ngModel)]="isChecked">
+        {{ 'segmenter.mgmt.management.dialog-upload.fields.automatic' | translate | uppercase }}
+      </mat-slide-toggle>
+      <input hidden type="file" formControlName="file" #fileInput (change)="onFileInput(fileInput.files)"
+             accept=".xls, .xlsx">
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-divider class="actions-divider"></mat-divider>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close="" [type]="'reset'">{{ 'commons.cancel' | translate }}</button>
+  <button mat-raised-button color="primary"
+          type="submit" [disabled]="!uploadForm.valid"
+          [mat-dialog-close]="true"
+          (click)="uploadFile()">{{ 'commons.accept' | translate }}</button>
+</mat-dialog-actions>

@@ -1,0 +1,86 @@
+{
+  "aggregator": {
+    "title": "MÓDULO - AGREGADOR",
+    "home": {
+      "label": "INICIO",
+      "search": {
+        "title": "BUSCAR",
+        "placeholder": "INTRODUZCA TEXTO A BUCAR"
+      },
+      "new-aggregator": "EJECUTAR",
+      "history": {
+        "label": "HISTORIAL DE EJECUCIONES",
+        "columns": {
+          "data-date": "Fecha Dato",
+          "start-date": "Inicio",
+          "end-date": "Fin",
+          "typology": "Tipo Contrato",
+          "entity": "Entidad",
+          "purpose": "Finalidad",
+          "period": "Periodicidad",
+          "status": "Estado",
+          "criterion": "Criterio",
+          "execution-date": "Fecha Ejecución"
+        }
+      },
+      "dialog-exec": {
+        "label": "EJECUTAR NUEVA AGREGACIÓN",
+        "fields": {
+          "data-date": "FECHA DATO",
+          "typology": "TIPO CONTRATO",
+          "entity": "ENTIDAD(ES)",
+          "period": "PERIODICIDAD",
+          "purpose": "FINALIDAD"
+        }
+      }
+    },
+    "mgmt": {
+      "label": "GESTIÓN",
+      "search": {
+        "title": "BUSCAR",
+        "placeholder": "INTRODUZCA TEXTO A BUCAR"
+      },
+      "management": {
+        "label": "GESTIÓN DE CRITERIOS",
+        "columns": {
+          "name": "Nombre",
+          "typology": "Tipología",
+          "available": "Disponible",
+          "actions": "Acciones"
+        },
+        "actions": {
+          "delete": "Eliminar",
+          "upload": "Importar"
+        },
+        "dialog-create": {
+          "label": "CREAR CRITERIO",
+          "fields": {
+            "typology": "TIPOLOGÍA",
+            "name": "NOMBRE",
+            "definition": "DEFINICIÓN"
+          }
+        },
+        "dialog-upload": {
+          "label": "IMPORTAR CRITERIO",
+          "fields": {
+            "input-file": "SELECCIONE FICHERO"
+          }
+        }
+      }
+    }
+  },
+  "commons": {
+    "all": "TODAS",
+    "cancel": "CANCELAR",
+    "accept": "ACEPTAR",
+    "create": "CREAR",
+    "back": "VOLVER",
+    "confirmation-modal": {
+      "label": "Información",
+      "message": "Está seguro que desea eliminar el registro!"
+    },
+    "validations": {
+      "invalid-excel-extension": "EXTENSIÓN DE EXCEL NO VÁLIDA"
+    }
+  }
+}

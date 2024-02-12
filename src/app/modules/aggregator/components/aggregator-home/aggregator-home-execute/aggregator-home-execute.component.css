@@ -1,0 +1,26 @@
+.mat-card-header {
+  padding: 15px;
+  background: #EC0000;
+  color: white;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.actions-divider {
+  margin-top: 20px;
+}
+
+.mat-accordion {
+  margin: 0.25em 0;
+  padding-bottom: 1.34375em;
+}
+
+:host ::ng-deep .mat-expansion-panel-body {
+  padding: 0;
+}
